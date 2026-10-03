@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — CURSOR</title>
+<meta name="description" content="Publications from CURSOR, the software engineering research lab at the Department of Computer Engineering, Faculty of Engineering, Chulalongkorn University.">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- reusable static mark: commit-graph C + prompt cursor -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 140 120">
+    <path d="M85.24 96.04 A44 44 0 1 1 85.24 23.96" fill="none" stroke="#16141C" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="85.24" cy="96.04" r="5.5" fill="#16141C"/>
+    <circle cx="52.36" cy="103.33" r="5.5" fill="#16141C"/>
+    <circle cx="23.96" cy="85.24" r="5.5" fill="#16141C"/>
+    <circle cx="23.96" cy="34.76" r="5.5" fill="#16141C"/>
+    <circle cx="52.36" cy="16.67" r="5.5" fill="#16141C"/>
+    <circle cx="85.24" cy="23.96" r="5.5" fill="#16141C"/>
+    <rect x="95" y="96" width="26" height="7" rx="3.5" fill="#D3006B"/>
+  </symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="CURSOR home">
+      <svg class="glyph"><use href="#mark"/></svg>
+      <span class="name">CURSOR</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="links" id="menu">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#people">People</a>
+      <a href="publications.html" aria-current="page" style="color:var(--ink)">Publications</a>
+      <a href="index.html#news">News</a>
+      <a href="index.html#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Publications</h2>
+        <div class="big">Papers, articles &amp; chapters</div>
+        <p style="max-width:none">The complete publication record. Filter by type or search by title, author, or venue.</p>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="wrap">
+      <div class="pub-tools">
+        <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
+        <input class="pub-search" id="q" type="search" placeholder="Search publications" aria-label="Search publications">
+      </div>
+      <div id="pub-list"><p class="pub-status">Loading publications…</p></div>
+      <noscript><p class="see-all"><a href="https://www.chaiyong.dev/MyCV/">See the full publication list →</a></p></noscript>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-brand">CURSOR</div>
+      <div style="margin-top:6px;">Code Understanding, Reliability, and Software Orchestration Research</div>
+    </div>
+    <div style="text-align:right;">
+      <div>Department of Computer Engineering</div>
+      <div style="margin-top:6px;">Faculty of Engineering, Chulalongkorn University</div>
+      <div style="margin-top:6px;">Bangkok, Thailand</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var SOURCES=['https://www.chaiyong.dev/cv-data.json','https://cragkhit.github.io/cv-data.json'];
+    var BASE='https://www.chaiyong.dev/';
+    var MIN_YEAR=2019; // earlier work is from the PhD
+    var TYPES=[['all','All'],['journal','Journal'],['conference','Conference'],['workshop','Workshop'],['chapter','Book chapter']];
+    var list=document.getElementById('pub-list'), filters=document.getElementById('filters'),
+        q=document.getElementById('q'), stats=document.getElementById('stats');
+    var pubs=[], type='all';
+
+    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function url(u){try{return new URL(u,BASE).href;}catch(e){return u;}}
+    function authors(a){return esc(a).replace(/(C\. Ragkhitwetsagul|Ragkhitwetsagul, C\.)/g,'<b>$1</b>');}
+    function primary(p){var l=(p.links||[]).filter(function(x){return /^(doi|the chapter|preprint)/i.test(x.label);})[0];return l&&url(l.url);}
+
+    function fetchFirst(i){
+      return fetch(SOURCES[i]).then(function(r){if(!r.ok) throw new Error(r.status);return r.json();})
+        .catch(function(e){if(i+1<SOURCES.length) return fetchFirst(i+1);throw e;});
+    }
+
+    function renderStats(){
+      function count(t){return pubs.filter(function(p){return p.type===t;}).length;}
+      var items=[[pubs.length,'publications'],[count('journal'),'journal articles'],
+        [count('conference'),'conference papers'],[count('workshop'),'workshop papers'],[count('chapter'),'book chapters']];
+      stats.innerHTML=items.map(function(x){return '<div class="stat"><div class="n">'+esc(x[0])+'</div><div class="l">'+esc(x[1])+'</div></div>';}).join('');
+    }
+
+    function renderFilters(){
+      filters.innerHTML=TYPES.map(function(t){
+        var n=t[0]==='all'?pubs.length:pubs.filter(function(p){return p.type===t[0];}).length;
+        return n?'<button type="button" data-type="'+t[0]+'" aria-pressed="'+(t[0]===type)+'">'+t[1]+' · '+n+'</button>':'';
+      }).join('');
+    }
+
+    function render(){
+      var term=q.value.trim().toLowerCase();
+      var shown=pubs.filter(function(p){
+        if(type!=='all'&&p.type!==type) return false;
+        return !term||[p.title,p.authors,p.venue,p.venueAcronym,p.venueFullName,p.year].join(' ').toLowerCase().indexOf(term)>-1;
+      });
+      if(!shown.length){list.innerHTML='<p class="pub-status">No publications match.</p>';return;}
+      var html='', year=null;
+      shown.forEach(function(p){
+        if(p.year!==year){if(year!==null) html+='</ul>';year=p.year;html+='<h3 class="year">'+esc(year)+'</h3><ul class="pubs">';}
+        var href=primary(p), title=href?'<a href="'+esc(href)+'">'+esc(p.title)+'</a>':esc(p.title);
+        var links=(p.links||[]).map(function(l){return '<a href="'+esc(url(l.url))+'">'+esc(l.label)+'</a>';}).join('');
+        html+='<li><div class="pub-tag">'+esc(p.venueAcronym||p.type)+'</div><div class="pub-body">'+
+          '<div class="t">'+title+'</div><div class="au">'+authors(p.authors)+'</div>'+
+          '<div class="v">'+esc(p.venue)+'</div>'+(links?'<div class="pub-links">'+links+'</div>':'')+'</div></li>';
+      });
+      list.innerHTML=html+'</ul>';
+    }
+
+    filters.addEventListener('click',function(e){
+      var b=e.target.closest('button');if(!b) return;
+      type=b.getAttribute('data-type');
+      [].forEach.call(filters.children,function(x){x.setAttribute('aria-pressed',x===b);});
+      render();
+    });
+    q.addEventListener('input',render);
+
+    fetchFirst(0).then(function(d){
+      pubs=(d.publications||[]).filter(function(p){return p.year>=MIN_YEAR;}).sort(function(a,b){return (b.year||0)-(a.year||0);});
+      renderStats();renderFilters();render();
+    }).catch(function(){
+      list.innerHTML='<p class="pub-status">Publications could not be loaded. <a class="see-all" href="https://www.chaiyong.dev/MyCV/" style="color:var(--magenta)">See the full list on the CV →</a></p>';
+    });
+  })();
+</script>
+<script>
+  var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
+  btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.setAttribute('aria-expanded',open);});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A') menu.classList.remove('open');});
+</script>
+</body>
+</html>
