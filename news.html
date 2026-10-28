@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — CURSOR</title>
+<meta name="description" content="News from CURSOR, the software engineering research lab at the Department of Computer Engineering, Faculty of Engineering, Chulalongkorn University.">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="CURSOR home">
+      <img class="logo" src="images/cursor-field.svg" alt="CURSOR" width="109" height="34">
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="links" id="menu">
+      <a href="index.html#research">Research</a>
+      <a href="people.html">People</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html" aria-current="page" style="color:var(--ink)">News</a>
+      <a href="index.html#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>News</h2>
+        <div class="big">All updates</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="wrap">
+      <ul class="news">
+        <li><span class="when">Oct 2026</span><span class="what">Dr. Chaiyong Ragkhitwetsagul is ranked #921 in the world (#2 in Thailand) in Software System Performance and Reliability in the Top1000 Scholar 2026 ranking by Scholarly Index (<a href="files/2026/2026-Top1000-Scholars.pdf" style="color:var(--magenta)">certificate</a>).</span></li>
+        <li><span class="when">Oct 2026</span><span class="what">CURSOR is established at the Faculty of Engineering, Chulalongkorn University.</span></li>
+        <li><span class="when">2026</span><span class="what">Now recruiting graduate and undergraduate students across all three research threads.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-brand">CURSOR</div>
+      <div style="margin-top:6px;">Code Understanding, Reliability, and Software Orchestration Research</div>
+    </div>
+    <div class="foot-addr">
+      <div>Department of Computer Engineering</div>
+      <div style="margin-top:6px;">Faculty of Engineering, Chulalongkorn University</div>
+      <div style="margin-top:6px;">17th floor, Engineering 4 Building (Charoenvidsavakham)</div>
+      <div style="margin-top:6px;">Phayathai Road, Wang Mai, Pathumwan</div>
+      <div style="margin-top:6px;">Bangkok 10330 Thailand</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
+  btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.setAttribute('aria-expanded',open);});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A') menu.classList.remove('open');});
+</script>
+</body>
+</html>
