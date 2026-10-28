@@ -122,6 +122,8 @@ ul.news .when{font-family:var(--mono);font-size:13px;color:var(--slate);padding-
 ul.news .what{color:var(--ink);}
 ul.news .news-img{display:block;margin-top:14px;max-width:520px;}
 ul.news .news-img img{display:block;width:100%;height:auto;border:1px solid var(--hair);border-radius:6px;}
+ul.news .news-list{margin:8px 0 8px;padding-left:20px;}
+ul.news .news-list li{display:list-item;padding:3px 0;border:0;}
 
 footer{padding:54px 0;border-top:1px solid var(--hair);color:var(--slate);font-size:14.5px;}
 .foot-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;}
