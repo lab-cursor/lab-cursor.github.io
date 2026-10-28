@@ -120,6 +120,8 @@ ul.news li{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:16px 0;
 ul.news li:last-child{border-bottom:1px solid var(--hair);}
 ul.news .when{font-family:var(--mono);font-size:13px;color:var(--slate);padding-top:2px;}
 ul.news .what{color:var(--ink);}
+ul.news .news-img{display:block;margin-top:14px;max-width:520px;}
+ul.news .news-img img{display:block;width:100%;height:auto;border:1px solid var(--hair);border-radius:6px;}
 
 footer{padding:54px 0;border-top:1px solid var(--hair);color:var(--slate);font-size:14.5px;}
 .foot-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;}
