@@ -76,8 +76,11 @@ section.panel{background:var(--panel);border-top:1px solid var(--hair);border-bo
 .person .role{color:var(--magenta);font-family:var(--mono);font-size:13.5px;margin:0 0 14px;}
 .person p{margin:0 0 16px;color:var(--slate);}
 .plinks{display:flex;gap:22px;flex-wrap:wrap;font-size:14.5px;}
-.plinks a{color:var(--ink);border-bottom:1px solid var(--hair);padding-bottom:2px;transition:border-color .15s;}
-.plinks a:hover{border-color:var(--magenta);}
+.plinks a{display:inline-flex;align-items:center;gap:7px;color:var(--ink);}
+.plinks a span{border-bottom:1px solid var(--hair);padding-bottom:2px;transition:border-color .15s;}
+.plinks a svg{width:16px;height:16px;flex:none;color:var(--slate);transition:color .15s;}
+.plinks a:hover span{border-color:var(--magenta);}
+.plinks a:hover svg{color:var(--magenta);}
 .join-note{margin-top:34px;padding:22px 24px;border:1px solid var(--hair);border-left:3px solid var(--magenta);border-radius:8px;background:var(--white);}
 .join-note p{margin:0;color:var(--slate);}
 .join-note b{color:var(--ink);}
