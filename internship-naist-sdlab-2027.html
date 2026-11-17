@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAIST Internship 2027 — CURSOR</title>
+<meta name="description" content="Software engineering research internship at the SD Lab, NAIST, Japan, for students of CURSOR, the software engineering research lab at the Department of Computer Engineering, Faculty of Engineering, Chulalongkorn University.">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="CURSOR home">
+      <img class="logo" src="images/cursor-field.svg" alt="CURSOR" width="109" height="34">
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="links" id="menu">
+      <a href="index.html#research">Research</a>
+      <a href="people.html">People</a>
+      <a href="publications.html">Publications</a>
+      <a href="collaborations.html" style="color:var(--ink)">Collaborations</a>
+      <a href="news.html">News</a>
+      <a href="index.html#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="intern-head">
+        <img class="intern-logo" src="images/internships/naist-logo.jpg" alt="Nara Institute of Science and Technology (NAIST) logo" width="300" height="300">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Internship</h2>
+        <div class="big">NAIST, Japan</div>
+        <p>A research internship of about 10–12 weeks in software engineering at the Laboratory for Software Design and Analysis (SD Lab), Nara Institute of Science and Technology.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="wrap">
+      <p class="back-link"><a href="collaborations.html#internships" style="color:var(--magenta)">← All internship opportunities</a></p>
+      <figure class="intern-figure">
+        <img class="intern-photo" src="images/internships/naist-campus.jpg" alt="Bioscience building and pond on the NAIST campus" width="1280" height="960">
+        <figcaption><a href="https://commons.wikimedia.org/wiki/File:Bioscience_naist.jpg">Bioscience building, NAIST</a> by Helito, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via Wikimedia Commons. Cropped.</figcaption>
+      </figure>
+      <dl class="facts">
+        <dt>University / institute</dt><dd>Nara Institute of Science and Technology (NAIST), Software Engineering</dd>
+        <dt>Country</dt><dd>Japan</dd>
+        <dt>Lab</dt><dd><a href="https://sdlab.naist.jp/en/" style="color:var(--magenta)">Laboratory for Software Design and Analysis (SD Lab)</a></dd>
+        <dt>Research area</dt><dd>Software Engineering</dd>
+        <dt>Internship period</dt><dd>Approx. 10–12 weeks (mid-May to end of July 2027)</dd>
+        <dt>Positions</dt><dd>1</dd>
+        <dt>Eligibility</dt><dd><ul><li>2nd- or 3rd-year students of CP, CEDT, or the master’s program</li><li>CGPA ≥ 3.20</li></ul></dd>
+        <dt>Commitment after internship</dt><dd>A research paper submitted to a conference (4 to 10 pages)</dd>
+        <dt>Scholarship</dt><dd>Approx. ¥80,000 per month from the host university</dd>
+        <dt>Accommodation</dt><dd>NAIST guesthouse or equivalent accommodation, paid by the student</dd>
+        <dt>Contact</dt><dd>Dr. Chaiyong Ragkhitwetsagul (<a href="mailto:chaiyong@cp.eng.chula.ac.th" style="color:var(--magenta)">chaiyong@cp.eng.chula.ac.th</a>)</dd>
+      </dl>
+      <h3 class="partner-group" style="margin-top:48px;">Key dates</h3>
+      <dl class="facts">
+        <dt>Application period</dt><dd>Now – December 31, 2026</dd>
+        <dt>Interview</dt><dd>First two weeks of January 2027</dd>
+        <dt>Result announcement</dt><dd>Within 1 week after the host interview</dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-brand">CURSOR</div>
+      <div style="margin-top:6px;">Code Understanding, Reliability, and Software Orchestration Research</div>
+    </div>
+    <div class="foot-addr">
+      <div>Department of Computer Engineering</div>
+      <div style="margin-top:6px;">Faculty of Engineering, Chulalongkorn University</div>
+      <div style="margin-top:6px;">17th floor, Engineering 4 Building (Charoenvidsavakham)</div>
+      <div style="margin-top:6px;">Phayathai Road, Wang Mai, Pathumwan</div>
+      <div style="margin-top:6px;">Bangkok 10330 Thailand</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
+  btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.setAttribute('aria-expanded',open);});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A') menu.classList.remove('open');});
+</script>
+</body>
+</html>
