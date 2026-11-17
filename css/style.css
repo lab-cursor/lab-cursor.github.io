@@ -65,6 +65,7 @@ section.panel{background:var(--panel);border-top:1px solid var(--hair);border-bo
 .pillar .tags{margin-top:14px;font-family:var(--mono);font-size:12.5px;color:var(--ink);}
 .partner-group{font-size:20px;font-weight:600;letter-spacing:-.01em;margin:0 0 18px;}
 .partners + .partner-group{margin-top:48px;}
+.divider{border:0;border-top:1px solid var(--hair);margin:56px 0 48px;}
 .partners{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .partner{background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:22px 24px;}
 .partner-logo{height:72px;display:flex;align-items:center;margin-bottom:16px;}
@@ -73,7 +74,7 @@ section.panel{background:var(--panel);border-top:1px solid var(--hair);border-bo
 .partner p{margin:0;color:var(--slate);font-size:14.5px;}
 .back-link{margin:0 0 28px;font-size:14.5px;}
 .intern-head{display:flex;align-items:center;gap:32px;}
-.intern-logo{width:112px;height:112px;flex:none;border-radius:10px;}
+.intern-logo{width:112px;height:112px;flex:none;border-radius:10px;object-fit:contain;}
 .intern-figure{margin:0 0 36px;max-width:860px;}
 .intern-photo{display:block;width:100%;height:360px;object-fit:cover;border-radius:10px;}
 .intern-figure figcaption{margin-top:8px;font-size:12.5px;color:var(--slate);}
@@ -83,6 +84,7 @@ section.panel{background:var(--panel);border-top:1px solid var(--hair);border-bo
 .facts dt{font-family:var(--mono);font-size:13px;color:var(--slate);padding-top:16px;}
 .facts dd{color:var(--ink);}
 .facts dd ul{margin:0;padding-left:18px;}
+.facts dd ul li + li{margin-top:4px;}
 .topics{margin-top:48px;padding-top:32px;border-top:1px solid var(--hair);}
 .topics h3{font-size:20px;margin:0 0 10px;font-weight:600;letter-spacing:-.01em;}
 .topics p{margin:0 0 20px;color:var(--slate);font-size:15.5px;max-width:60ch;}
