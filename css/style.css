@@ -63,6 +63,14 @@ section.panel{background:var(--panel);border-top:1px solid var(--hair);border-bo
 .pillar h3{font-size:20px;margin:0 0 10px;font-weight:600;letter-spacing:-.01em;}
 .pillar p{margin:0;color:var(--slate);font-size:15.5px;}
 .pillar .tags{margin-top:14px;font-family:var(--mono);font-size:12.5px;color:var(--ink);}
+.partner-group{font-size:20px;font-weight:600;letter-spacing:-.01em;margin:0 0 18px;}
+.partners + .partner-group{margin-top:48px;}
+.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.partner{background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:22px 24px;}
+.partner-logo{height:72px;display:flex;align-items:center;margin-bottom:16px;}
+.partner-logo img{max-height:72px;max-width:180px;width:auto;height:auto;}
+.partner h4{font-size:16.5px;margin:0 0 4px;font-weight:600;line-height:1.35;}
+.partner p{margin:0;color:var(--slate);font-size:14.5px;}
 .topics{margin-top:48px;padding-top:32px;border-top:1px solid var(--hair);}
 .topics h3{font-size:20px;margin:0 0 10px;font-weight:600;letter-spacing:-.01em;}
 .topics p{margin:0 0 20px;color:var(--slate);font-size:15.5px;max-width:60ch;}
@@ -141,6 +149,8 @@ footer{padding:54px 0;border-top:1px solid var(--hair);color:var(--slate);font-s
   nav.links.open a{padding:12px 0;border-bottom:1px solid var(--hair);}
   .hero-art svg{max-width:220px;}
   .pillars{grid-template-columns:1fr;gap:0;}
+  .partners{grid-template-columns:1fr 1fr;gap:14px;}
+  .partner{padding:18px;}
   .pillars::before{top:0;bottom:0;left:8px;right:auto;width:2px;height:auto;}
   .pillar{padding:0 0 34px 40px;}
   .pillar .node{top:4px;}
