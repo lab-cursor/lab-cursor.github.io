@@ -182,3 +182,74 @@ footer{padding:54px 0;border-top:1px solid var(--hair);color:var(--slate);font-s
 .btn-apply:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.24);filter:brightness(1.08);}
 .btn-apply svg{width:20px;height:20px;}
 @media (max-width:820px){.btn-apply{display:flex;justify-content:center;width:100%;box-sizing:border-box;}}
+
+/* Japan internship guide (Thai) */
+body.th{font-family:'Inter','Noto Sans Thai',system-ui,-apple-system,sans-serif;line-height:1.7;}
+.jp-credit{font-family:var(--mono);font-size:13px;color:var(--ink) !important;margin-top:18px !important;}
+.jp-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;}
+.jp-toc a{font-size:14px;color:var(--ink);background:var(--white);border:1px solid var(--hair);border-radius:999px;padding:6px 14px;transition:border-color .15s,color .15s;}
+.jp-toc a:hover{border-color:var(--magenta);color:var(--magenta);}
+.jp-note{margin:0 0 20px;}
+.jp-note p{font-size:15px;}
+.jp-legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px;}
+.tag{display:inline-block;font-size:12.5px;font-weight:600;line-height:1.4;border-radius:999px;padding:3px 11px;border:1px solid transparent;white-space:nowrap;}
+.t-type{color:var(--slate);border-color:var(--hair);background:var(--white);}
+.t-full{color:#065F46;background:#E3F6EC;border-color:#B7E6CC;}
+.t-paid{color:#1E40AF;background:#E6EDFC;border-color:#C3D3F7;}
+.t-partial{color:#8A4B06;background:#FDF1DC;border-color:#F4D9A8;}
+.t-self{color:#9B1C1C;background:#FDE8E8;border-color:#F7C9C9;}
+.t-deadline{color:var(--magenta);background:#FCE6F0;border-color:#F4BCD6;}
+.jp-sec{display:flex;align-items:baseline;gap:14px;font-size:24px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:64px 0 22px;scroll-margin-top:90px;}
+.jp-sec .num{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--magenta);}
+.jp-sub{font-weight:600;margin:0 0 12px;}
+.facts.cost{max-width:none;background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:0 24px;}
+.facts.cost dt{font-family:inherit;font-size:14.5px;color:var(--ink);font-weight:600;}
+.facts.cost dd{color:var(--slate);}
+.facts.cost dt:last-of-type,.facts.cost dd:last-of-type{border-bottom:0;}
+.progs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.prog{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:24px 26px;scroll-margin-top:90px;}
+.prog:target{border-color:var(--magenta);box-shadow:0 0 0 3px #FCE6F0;}
+.prog h4{font-size:18px;font-weight:700;line-height:1.35;margin:0 0 4px;}
+.prog .org{margin:0 0 12px;color:var(--slate);font-size:14.5px;}
+.prog .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;}
+.prog-facts{margin:0;font-size:15px;}
+.prog-facts dt{font-family:var(--mono);font-size:12px;color:var(--slate);margin-top:12px;}
+.prog-facts dt:first-child{margin-top:0;}
+.prog-facts dd{margin:2px 0 0;color:var(--ink);word-break:break-word;}
+.prog-note{margin:16px 0 0;font-size:14.5px;padding:10px 14px;border-radius:8px;border-left:3px solid;}
+.prog-note.good{background:#FCE6F0;border-color:var(--magenta);}
+.prog-note.info{background:#E6EDFC;border-color:#1E40AF;}
+.prog-note.warn{background:#FDF1DC;border-color:#C27409;}
+.btn-site{align-self:flex-start;margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;font-size:15px;font-weight:600;background:var(--magenta);color:var(--white);transition:filter .15s,transform .15s;}
+.prog-facts + .btn-site,.prog-note + .btn-site{margin-top:20px;}
+.prog > .btn-site{margin-top:auto;}
+.prog-facts{margin-bottom:20px;}
+.btn-site:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.btn-site svg{width:16px;height:16px;}
+.table-wrap{overflow-x:auto;background:var(--white);border:1px solid var(--hair);border-radius:10px;}
+table.cmp{width:100%;border-collapse:collapse;font-size:14.5px;}
+table.cmp th,table.cmp td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--hair);vertical-align:top;}
+table.cmp th{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--slate);background:var(--panel);white-space:nowrap;}
+table.cmp tr:last-child td{border-bottom:0;}
+table.cmp td:first-child{font-weight:600;white-space:nowrap;}
+ol.tips{margin:0;padding:0;list-style:none;counter-reset:tip;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+ol.tips li{counter-increment:tip;background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:20px 22px;}
+ol.tips li b{display:block;margin-bottom:6px;}
+ol.tips li b::before{content:counter(tip,decimal-leading-zero);font-family:var(--mono);font-size:13px;color:var(--magenta);margin-right:10px;}
+ol.tips li span{color:var(--slate);font-size:15px;}
+.jp-foot{margin:48px 0 0;font-size:13.5px;color:var(--slate);}
+.guide-link{margin:22px 0 0;font-size:15.5px;}
+@media (max-width:820px){
+  .progs,ol.tips{grid-template-columns:1fr;}
+  .prog{padding:20px;}
+  .facts.cost{grid-template-columns:1fr;padding:0 18px;}
+  .facts.cost dt{border-bottom:0;padding-bottom:0;}
+  .jp-sec{font-size:20px;margin-top:48px;}
+}
+body.th .prog-facts dt{font-family:inherit;font-size:12.5px;font-weight:600;letter-spacing:0;}
+body.th .jp-credit{font-family:inherit;font-size:14px;font-weight:600;}
+body.th table.cmp th{font-family:inherit;font-size:13px;}
+.progs.three{grid-template-columns:repeat(3,1fr);}
+.jp-small{margin:10px 0 0;font-size:13.5px;color:var(--slate);}
+ol.tips li span a{color:var(--magenta);}
+@media (max-width:980px){.progs.three{grid-template-columns:1fr;}}
