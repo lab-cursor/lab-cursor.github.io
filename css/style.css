@@ -253,3 +253,4 @@ body.th table.cmp th{font-family:inherit;font-size:13px;}
 .jp-small{margin:10px 0 0;font-size:13.5px;color:var(--slate);}
 ol.tips li span a{color:var(--magenta);}
 @media (max-width:980px){.progs.three{grid-template-columns:1fr;}}
+.prog .prog-note{margin-bottom:20px;}
